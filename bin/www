@@ -3,11 +3,15 @@
 /**
  * Module dependencies.
  */
-
 var app = require('../app');
 var debug = require('debug')('orga:server');
 var http = require('http');
+var https = require('https');
+var fs = require('fs');
 
+var privateKey  = fs.readFileSync('./certificados/orga.cupagroup.com.key', 'utf8');
+var certificate = fs.readFileSync('./certificados/orga.cupagroup.com.crt', 'utf8');
+var credentials = {key: privateKey, cert: certificate};
 /**
  * Get port from environment and store in Express.
  */
@@ -19,7 +23,7 @@ app.set('port', port);
  * Create HTTP server.
  */
 
-var server = http.createServer(app);
+var server = https.createServer(credentials, app);
 
 /**
  * Listen on provided port, on all network interfaces.

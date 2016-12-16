@@ -1,0 +1,70 @@
+Certificate:
+    Data:
+        Version: 1 (0x0)
+        Serial Number: 5 (0x5)
+    Signature Algorithm: sha1WithRSAEncryption
+        Issuer: C=ES, ST=LEON, L=Ponferrada, O=Cupagroup/emailAddress=sistemas@cupagroup.com, CN=Cupagroup Certificate Authority
+        Validity
+            Not Before: Jan 27 16:02:24 2016 GMT
+            Not After : Jan 24 16:02:24 2026 GMT
+        Subject: C=ES, ST=LEON, O=Cupagroup, CN=orga.cupagroup.com/emailAddress=sistemas@cupagroup.com
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+                Public-Key: (2048 bit)
+                Modulus:
+                    00:96:3a:57:dc:70:3e:76:b9:18:8c:f8:4b:6e:bb:
+                    5a:26:99:d0:f5:bc:90:79:e5:eb:6f:f8:92:8f:6f:
+                    d5:b5:0a:a5:05:e6:de:33:19:9f:ab:0d:63:c0:0d:
+                    bf:fe:76:ef:13:65:90:26:0a:74:82:db:d6:6e:c4:
+                    37:97:6e:1b:df:16:f2:2a:52:ab:27:3f:ad:09:8e:
+                    61:8f:e4:20:f6:db:34:1f:07:f3:f7:3e:f8:4f:c9:
+                    21:17:3e:64:69:74:70:b0:4e:50:15:75:bd:8f:53:
+                    06:fa:8d:49:6e:f9:54:f3:5f:cd:cb:5a:1a:07:0f:
+                    0e:f6:3e:7c:1a:e0:ad:05:76:5a:37:b0:f2:88:de:
+                    8f:ef:92:f7:17:6c:3d:54:c6:33:04:52:e1:24:62:
+                    1f:05:af:6d:df:cc:b8:11:f2:d7:b9:c2:f5:86:93:
+                    ff:8c:83:c8:4b:40:d5:85:5b:84:8f:f5:43:5a:49:
+                    6c:ff:83:a3:dd:dd:70:6d:1f:0a:4e:12:4b:a7:98:
+                    3b:74:2f:b6:87:5e:20:2e:22:ed:12:8e:01:86:f8:
+                    63:b6:e8:44:ec:02:c9:13:bb:0c:88:b6:24:b9:9e:
+                    b5:c8:b9:5f:2f:21:c3:2a:89:ae:2d:0c:a5:21:49:
+                    3e:dd:d1:79:a8:55:6b:9c:4c:47:e7:79:f8:6a:15:
+                    7d:61
+                Exponent: 65537 (0x10001)
+    Signature Algorithm: sha1WithRSAEncryption
+         96:6c:c3:9a:7f:86:af:e0:30:92:e9:40:ae:6e:79:d4:de:1e:
+         76:9b:63:56:33:d9:94:80:ec:e1:78:d9:9d:aa:75:7c:54:14:
+         05:79:03:10:02:44:a0:3c:2e:7b:26:66:ee:a7:58:e7:ad:5f:
+         1f:8c:15:6e:f7:0c:cb:d9:ee:82:ac:9f:f7:ff:f9:dd:82:f3:
+         7e:f6:03:72:0d:04:65:04:df:d3:0e:fd:33:b0:29:ec:fb:7c:
+         41:a6:87:a9:2f:73:60:0a:07:89:e8:d2:8f:93:1e:f5:7f:22:
+         9d:79:4d:9e:57:38:2f:bc:76:de:1f:57:4f:a5:df:21:5b:d0:
+         ff:ce:c9:dd:ab:00:43:bf:17:fc:70:c6:62:a5:56:03:10:30:
+         85:9f:ac:b2:b2:32:21:cb:d0:09:6b:d8:14:1c:b9:5d:06:6f:
+         8c:82:12:f2:9d:1c:ac:d1:e5:0c:b3:bd:86:d5:ca:9d:1c:5a:
+         ed:d2:bb:0b:fb:47:b3:73:60:51:0d:70:e2:8a:78:10:b4:1e:
+         77:07:41:5e:c4:4c:1b:cf:50:fb:0f:f6:2b:db:16:a8:05:e0:
+         9b:a0:66:fb:52:70:99:18:41:39:e4:0b:5b:66:df:80:f0:08:
+         6b:65:7f:b9:72:b0:c4:f3:8f:c3:f7:27:82:b0:0c:2d:fa:35:
+         4f:93:2b:42
+-----BEGIN CERTIFICATE-----
+MIIDfzCCAmcCAQUwDQYJKoZIhvcNAQEFBQAwgZYxCzAJBgNVBAYTAkVTMQ0wCwYD
+VQQIEwRMRU9OMRMwEQYDVQQHEwpQb25mZXJyYWRhMRIwEAYDVQQKEwlDdXBhZ3Jv
+dXAxJTAjBgkqhkiG9w0BCQEWFnNpc3RlbWFzQGN1cGFncm91cC5jb20xKDAmBgNV
+BAMTH0N1cGFncm91cCBDZXJ0aWZpY2F0ZSBBdXRob3JpdHkwHhcNMTYwMTI3MTYw
+MjI0WhcNMjYwMTI0MTYwMjI0WjB0MQswCQYDVQQGEwJFUzENMAsGA1UECBMETEVP
+TjESMBAGA1UEChMJQ3VwYWdyb3VwMRswGQYDVQQDExJvcmdhLmN1cGFncm91cC5j
+b20xJTAjBgkqhkiG9w0BCQEWFnNpc3RlbWFzQGN1cGFncm91cC5jb20wggEiMA0G
+CSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCWOlfccD52uRiM+Etuu1ommdD1vJB5
+5etv+JKPb9W1CqUF5t4zGZ+rDWPADb/+du8TZZAmCnSC29ZuxDeXbhvfFvIqUqsn
+P60JjmGP5CD22zQfB/P3PvhPySEXPmRpdHCwTlAVdb2PUwb6jUlu+VTzX83LWhoH
+Dw72Pnwa4K0Fdlo3sPKI3o/vkvcXbD1UxjMEUuEkYh8Fr23fzLgR8te5wvWGk/+M
+g8hLQNWFW4SP9UNaSWz/g6Pd3XBtHwpOEkunmDt0L7aHXiAuIu0SjgGG+GO26ETs
+AskTuwyItiS5nrXIuV8vIcMqia4tDKUhST7d0XmoVWucTEfnefhqFX1hAgMBAAEw
+DQYJKoZIhvcNAQEFBQADggEBAJZsw5p/hq/gMJLpQK5uedTeHnabY1Yz2ZSA7OF4
+2Z2qdXxUFAV5AxACRKA8LnsmZu6nWOetXx+MFW73DMvZ7oKsn/f/+d2C8372A3IN
+BGUE39MO/TOwKez7fEGmh6kvc2AKB4no0o+THvV/Ip15TZ5XOC+8dt4fV0+l3yFb
+0P/Oyd2rAEO/F/xwxmKlVgMQMIWfrLKyMiHL0Alr2BQcuV0Gb4yCEvKdHKzR5Qyz
+vYbVyp0cWu3Suwv7R7NzYFENcOKKeBC0HncHQV7ETBvPUPsP9ivbFqgF4JugZvtS
+cJkYQTnkC1tm34DwCGtlf7lysMTzj8P3J4KwDC36NU+TK0I=
+-----END CERTIFICATE-----

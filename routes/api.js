@@ -5,7 +5,7 @@ var connection = require('../models/mysql.js');
 
 /* API Division */
 router.get('/:table', (req, res, next) => {
-    consultarAll(req.params.table, (salida) => {
+    consultarAll(req.params.table, req.query, (salida) => {
         res.json(salida);
     });
 });
@@ -30,11 +30,19 @@ router.delete('/:table/:id', function(req, res, next) {
 });
 
 // Funcion para factorizar
-function consultarAll(params, callback) {
-    connection.query('SELECT * FROM ??', [params], (err, rows, fields) => {
-        if (err) throw err;
-        callback(rows);
-});}
+function consultarAll(params, query, callback) {
+    if ( isFull(query) ) {
+        connection.query('SELECT * FROM ?? WHERE ?', [params, query], (err, rows, fields) => {
+            if (err) throw err;
+            callback(rows);
+        });
+    } else {
+        connection.query('SELECT * FROM ??', [params], (err, rows, fields) => {
+            if (err) throw err;
+            callback(rows);
+        });
+    }
+}
 
 function consultarById(params, params2, callback) {
     connection.query('SELECT * FROM ?? WHERE id = ?', [params, params2], (err, rows, fields) => {
@@ -59,5 +67,13 @@ function deleteById(params, params2, callback) {
         if (err) throw err;
         callback(rows);
 });}
+
+function isFull(obj) {
+    for(var prop in obj) {
+        if(obj.hasOwnProperty(prop))
+            return true;
+    }
+    return false;
+}
 
 module.exports = router;
