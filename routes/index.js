@@ -23,6 +23,7 @@ var hola = {
 
 /* API Division */
 
+
 router.get('/pruebas', (req, res, next) => {
     connection.query('SELECT * FROM division LIMIT 4', (err, rows, fields) => {
         if (err) throw err;
@@ -43,8 +44,7 @@ router.get('/pruebas', (req, res, next) => {
 
 router.get('/:table', (req, res, next) => {
     consultarAll(req.params.table, req.query, (salida) => {
-
-        res.json(salida);
+        res.status(200).json(salida);
     });
 });
 
@@ -67,15 +67,71 @@ router.delete('/:table/:id', function(req, res, next) {
   res.json({object1: "division"});
 });
 
+
+//Promise para las sub-llamadas
+function selectDb (params, query) {
+    let promise = new Promise((resolve, reject) => {
+        connection.query('SELECT * FROM ?? WHERE ?', [params, query], (err, rows, fields) => {
+            if (err) {console.log(err); reject(err);}
+            resolve(rows);
+        });
+    });
+    return promise;
+}
+
 // Funcion para factorizar
 function consultarAll(params, query, callback) {
+    console.log('funcion consultarAll');
     if ( isFull(query) ) {
+        console.log('primer condicional');
+        selectDb(params, query)
+            //Primer Then
+            .then((rest) => {
+                console.log('ejecuta primer then');
+                rest.map((i) => {
+                    if(i.pagina === 1) {i.pagina = true;} 
+                    else if(i.pagina === 0) {i.pagina = false;}
+                    i.usuarios = null;
+                });
+                return rest;
+            })
+            //Segundo Then
+            .then((rest) =>  {
+                console.log('ejecuta segundo then');
+                let count = 0;
+                
+                rest.map((i) => {
+
+                    selectDb('usuario', {id:i.user})
+                    .then((restSub) => {
+                        count ++;
+                        i.user = restSub[0];
+                        if (count/2 == rest.length) callback(rest);
+                    }).catch(() => {/*return undefined;*/});
+
+                    selectDb('usuario', {id:i.user})
+                    .then ((restSub) => {
+                        count ++;
+                        i.usuarios = restSub[0];
+                        if (count/2 == rest.length) callback(rest);
+                    }).catch(() => {/*return undefined;*/});
+                });
+                
+            })
+            .catch((err) => {
+                console.log('tira error');
+                callback(err);
+            });
+        /*
         connection.query('SELECT * FROM ?? WHERE ?', [params, query], (err, rows, fields) => {
             if (err) throw err;
             let length = rows.length;
             let counter = 0;
             let that = rows;
             rows.map((i)=> {
+                if(i.pagina === 1) {i.pagina = true;} 
+                else if(i.pagina === 0) {i.pagina = false;}
+                i.usuarios = null;
                 connection.query('SELECT * FROM usuario WHERE id = ?', [i.user], (err, rows, fields) => {
                     if (err) throw err;
                     i.user = rows[0];
@@ -86,6 +142,7 @@ function consultarAll(params, query, callback) {
                 });
             });
         });
+        */
     } else {
         connection.query('SELECT * FROM ??', [params], (err, rows, fields) => {
             if (err) throw err;
